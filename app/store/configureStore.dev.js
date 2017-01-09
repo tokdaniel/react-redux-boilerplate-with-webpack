@@ -1,6 +1,6 @@
 import { applyMiddleware,createStore } from 'redux';
 import createLogger from 'redux-logger';
-import rootReducer from '../reducers/root';
+import rootReducer from '../reducers/index';
 
 const logger = createLogger();
 
