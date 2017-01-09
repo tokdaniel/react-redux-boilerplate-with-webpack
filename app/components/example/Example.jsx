@@ -28,7 +28,7 @@ const mapStateToProps = state => {
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
     return {
         onStuff: text => dispatch(exampleAction(text))
     };
