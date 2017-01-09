@@ -1,6 +1,8 @@
-.app-container{
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@font-face {
+  font-family: coves-light;
+  src: url('../../assets/fonts/coves-light.woff');
+}
+body{
+  font-family: coves-light;
+  overflow: hidden;
 }
