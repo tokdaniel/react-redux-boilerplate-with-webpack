@@ -7,10 +7,9 @@ import configureStore from './store/configureStore';
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
 
-import Root from './containers/root/Root.jsx';
+import Root from './components/root/Root.jsx';
 
 render(
-        <Root store={store} history={history}/>
-        ,
+        <Root store={store} history={history}/>,
         document.getElementById('react-root')
 );
