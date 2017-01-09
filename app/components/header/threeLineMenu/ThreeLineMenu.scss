@@ -1,0 +1,53 @@
+.three-line-menu {
+
+  $line-color: #B78846;
+
+  padding: 25px 37px;
+  border-right: 1px solid rgba(255,255,255,.1);
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    left: 24px;
+    width: 24px;
+    height: 2px;
+    background: $line-color;
+
+    transition: background .3s .3s;
+
+    &.sidebar-visible {
+      background: rgba($line-color, 0);
+
+      &:before {
+        transform: translateX(4px) translateY(-3px) rotate(45deg);
+      }
+      &:after {
+        transform: translateX(4px) translateY(2px) rotate(-45deg);
+      }
+    }
+
+    &:before {
+      content:'';
+      top: -6px;
+      position: absolute;
+      width: 24px;
+      height: 2px;
+      transform-origin: 0% 50%;
+      background: $line-color;
+
+      transition: transform .3s .3s;
+    }
+
+    &:after {
+      content:'';
+      top: 6px;
+      position: absolute;
+      width: 24px;
+      height: 2px;
+      transform-origin: 0% 50%;
+      background: $line-color;
+
+      transition: transform .3s .3s;
+    }
+  }
+}

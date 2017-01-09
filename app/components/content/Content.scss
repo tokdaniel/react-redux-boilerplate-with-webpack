@@ -1,0 +1,14 @@
+main {
+  height: 100vh;
+  position: relative;
+  background: url('../../assets/images/background_6.jpg') no-repeat;
+  background-size: cover;
+  z-index: 2;
+  padding: 100px 20px;
+
+  transition: transform .3s;
+
+  &.sidebar-visible {
+    transform: translateX(260px);
+  }
+}

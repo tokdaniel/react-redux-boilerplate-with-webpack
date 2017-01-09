@@ -1,0 +1,29 @@
+nav {
+  position: fixed;
+  top:0;
+  left:0;
+  width: 260px;
+  height: 100%;
+  background: white;
+
+  ul{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+
+    li {
+      display:flex;
+      align-items: center;
+      height: 52px;
+      width: 100%;
+      padding: 0px 20px;
+      font-size: 18px;
+
+
+      &:first-child{
+        background: #b78846;
+        color: white;
+      }
+    }
+  }
+}
