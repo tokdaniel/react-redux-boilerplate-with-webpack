@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
+import actions from '../../actions/index'
 import REST from '../../helpers/rest';
 import './Content.scss';
 
@@ -20,7 +21,7 @@ export default class Content extends Component {
 
     componentWillReceiveProps(props) {
 
-        REST.get('/').then((response) => this.props.dispatch({type: 'REST', data: response}));
+        REST.get('/').then((response) => this.props.dispatch(actions.restTest(response)));
 
         this.setState({
             sidebarVisible: !this.state.sidebarVisible,

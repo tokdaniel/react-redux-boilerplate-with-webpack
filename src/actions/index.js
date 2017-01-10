@@ -1,9 +1,9 @@
 import * as types from './types';
 
 export default {
-    exampleAction: () => {
+    restTest: (data) => {
         return {
-            type: types.EXAMPLE,
+            type: types.REST_TEST,
             data
         };
     },
