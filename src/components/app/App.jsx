@@ -1,10 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import './App.scss';
 
-//fix components
-import Header from '../header/Header.jsx';
-import Sidebar from '../slideOut/SlideOut.jsx';
-import Content from '../content/Content.jsx'
+//import used components
+import {Header, SlideOut, Content} from 'components';
 
 export default class App extends Component {
 
@@ -16,7 +14,7 @@ export default class App extends Component {
         return (
             <div className="container">
                 <Header />
-                <Sidebar />
+                <SlideOut />
                 <Content children={this.props.children} />
             </div>
         );

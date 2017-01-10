@@ -1,9 +1,8 @@
-import React, { Component, PropTypes } from 'react';
-import { Link } from 'react-router';
+import React, {Component, PropTypes} from 'react';
 import './SlideOut.scss';
 
 
-export default class Sidebar extends Component {
+export default class SlideOut extends Component {
 
     render() {
         return (

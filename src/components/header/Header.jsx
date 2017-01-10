@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import ThreeLineMenu from './threeLineMenu/ThreeLineMenu.jsx';
-import actions from '../../actions/';
+import {toggleSidebar} from  'actions';
 
 import './Header.scss';
 
@@ -29,7 +29,7 @@ export default class Header extends Component {
             className: this.state.sidebarVisible ? '' : 'sidebar-visible'
         });
 
-        this.props.dispatch(actions.toggleSidebar(!this.state.sidebarVisible));
+        this.props.dispatch(toggleSidebar(!this.state.sidebarVisible));
     }
 
     render() {
