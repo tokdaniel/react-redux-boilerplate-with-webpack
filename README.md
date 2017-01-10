@@ -1,7 +1,7 @@
 # react-redux-webpack-boilerplate
 Now this repo is much more than just a simple playaround with react, redux and webpack. The first priority was, to achieve the most convenient way to connect your components to the redux-store using classes. The syntax is really declarative and readable this way, sparing a lot of boilerplate code.
 
-Contains:
+##Contains:
 * very basic landing page, displaying the workflow with redux-logger
 * example components, and how to connect them to redux-store
 * supporting static class properties
@@ -13,7 +13,7 @@ Contains:
 * importing images and fonts as data-urls so you don't need to worry about them
 * a basic tool for REST with fetch-api
 
-Example Component:
+##Example Component:
 
 ```js
 import React, {Component, PropTypes} from 'react';
