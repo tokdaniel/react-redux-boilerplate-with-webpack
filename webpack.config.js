@@ -5,7 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        app: "./app/index.js",
+        app: "./src/index.js",
         vendor: [
             "babel-polyfill",
             "react-hot-loader",
@@ -17,13 +17,13 @@ module.exports = {
         filename: "/js/bundle-[hash].js",
         path: './dist',
     },
-    performance: { hints: false },
+    performance: {hints: false},
     module: {
         loaders: [
             {
                 test: /.jsx?$/,
-                loaders:'babel-loader',
-                include: path.join(__dirname, 'app'),
+                loaders: 'babel-loader',
+                include: path.join(__dirname, 'src'),
                 exclude: /node_modules/,
             },
             {
@@ -48,11 +48,11 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: '/js/vendor.bundle-[hash].js' }),
-        new ExtractTextPlugin('/css/app-[hash].css'),
+        new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: '/js/vendor.bundle-[hash].js'}),
+        new ExtractTextPlugin('/css/src-[hash].css'),
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: 'app/index.tpl.html',
+            template: 'src/index.tpl.html',
             inject: 'body'
         }),
         new webpack.HotModuleReplacementPlugin(),
