@@ -1,16 +1,15 @@
 import * as types from './types';
 
-export default {
-    restTest: (data) => {
-        return {
-            type: types.REST_TEST,
-            data
-        };
-    },
-    toggleSidebar: (isVisible) => {
-        return {
-            type: types.TOGGLE_SIDEBAR,
-            isVisible
-        };
-    }
+export const restTest = (data) => {
+    return {
+        type: types.REST_TEST,
+        data
+    };
+};
+
+export const toggleSidebar = (isVisible) => {
+    return {
+        type: types.TOGGLE_SIDEBAR,
+        isVisible
+    };
 }
