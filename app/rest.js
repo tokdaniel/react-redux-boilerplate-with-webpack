@@ -6,20 +6,20 @@ export default class Rest {
         return Rest._send(url, params, { method: 'get' });
     }
 
-    post(url, params = {}) {
-        return this._send(url, params, { method: 'post' });
+    static post(url, params = {}) {
+        return Rest._send(url, params, { method: 'post' });
     }
 
-    put(url, params = {}) {
-        return this._send(url, params, { method: 'put' });
+    static put(url, params = {}) {
+        return Rest._send(url, params, { method: 'put' });
     }
 
-    options(url, params = {}) {
-        return this._send(url, params, { method: 'options' });
+    static options(url, params = {}) {
+        return Rest._send(url, params, { method: 'options' });
     }
 
-    patch(url, params = {}) {
-        return this._send(url, params, { method: 'patch' });
+    static patch(url, params = {}) {
+        return Rest._send(url, params, { method: 'patch' });
     }
 
     static async _send(url, params, options) {
