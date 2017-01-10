@@ -1,18 +1,19 @@
 import React, {Component, PropTypes} from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import ThreeLineMenu from './threeLineMenu/ThreeLineMenu.jsx';
 import actions from '../../actions/';
 
 import './Header.scss';
 
-class Header extends Component {
+@connect(state => ({sidebarVisible: state.sidebar}))
+export default class Header extends Component {
 
     static propTypes = {
         state: PropTypes.object,
         dispatch: PropTypes.func
     };
 
-    constructor(props){
+    constructor(props) {
 
         super(props);
         this.state = {
@@ -35,27 +36,9 @@ class Header extends Component {
         return (
             <header className={this.state.className}>
                 <div onClick={() => this.handleClick()}>
-                    <ThreeLineMenu className={this.state.className}/>
+                    <ThreeLineMenu className={this.state.className} />
                 </div>
             </header>
         );
     }
 }
-
-
-const mapStateToProps = state => {
-    return {
-        state: {sidebarVisible: state.sidebarVisible}
-    };
-};
-
-const mapDispatchToProps = dispatch => {
-    return {
-        dispatch
-    };
-};
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Header);
