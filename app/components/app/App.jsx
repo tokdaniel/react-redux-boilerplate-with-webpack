@@ -1,4 +1,4 @@
-import React, {Component, PropTypes } from 'react';
+import React, {Component, PropTypes} from 'react';
 import './App.scss';
 
 //fix components
@@ -8,8 +8,12 @@ import Content from '../content/Content.jsx'
 
 export default class App extends Component {
 
-    render(){
-        return(
+    static propTypes = {
+        children: PropTypes.object
+    }
+
+    render() {
+        return (
             <div className="container">
                 <Header />
                 <Sidebar />
@@ -18,8 +22,3 @@ export default class App extends Component {
         );
     }
 }
-
-App.propTypes = {
-    children: PropTypes.object
-};
-
