@@ -1,6 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import { connect } from 'react-redux';
 
+import Rest from '../../rest';
+
 import './Content.scss';
 
 class Content extends Component {
@@ -18,6 +20,8 @@ class Content extends Component {
     }
 
     componentWillReceiveProps(props){
+
+        Rest.get('/').then((response) => this.props.dispatch({type: 'REST', data: response}));
 
         this.setState({
             sidebarVisible: !this.state.sidebarVisible,
@@ -37,7 +41,7 @@ class Content extends Component {
 
 const mapStateToProps = state => {
     return {
-        state: { sidebarVisible: state.sidebarVisible }
+        sidebarVisible: state.sidebarVisible
     }
 };
 

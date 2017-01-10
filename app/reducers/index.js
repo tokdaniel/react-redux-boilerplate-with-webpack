@@ -11,8 +11,18 @@ const sidebarVisible = (state = false, action) => {
     }
 }
 
+const rest = (state = {}, action) => {
+    switch (action.type){
+        case 'REST':
+            return action.data;
+        default:
+            return state;
+    }
+}
+
 const rootReducer = combineReducers({
     sidebarVisible,
+    rest,
     routing
 });
 
