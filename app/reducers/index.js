@@ -1,9 +1,9 @@
-import { routerReducer as routing } from 'react-router-redux';
-import { combineReducers } from 'redux';
+import {routerReducer as routing} from 'react-router-redux';
+import {combineReducers} from 'redux';
 import * as types from '../actions/types';
 
-const sidebarVisible = (state = false, action) => {
-    switch (action.type){
+const sidebar = (state = false, action) => {
+    switch (action.type) {
         case types.TOGGLE_SIDEBAR:
             return action.isVisible;
         default:
@@ -12,7 +12,7 @@ const sidebarVisible = (state = false, action) => {
 }
 
 const rest = (state = {}, action) => {
-    switch (action.type){
+    switch (action.type) {
         case 'REST':
             return action.data;
         default:
@@ -21,7 +21,7 @@ const rest = (state = {}, action) => {
 }
 
 const rootReducer = combineReducers({
-    sidebarVisible,
+    sidebar,
     rest,
     routing
 });
