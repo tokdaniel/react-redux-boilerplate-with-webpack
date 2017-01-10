@@ -1,29 +1,29 @@
-export default class Rest {
+export default class REST {
 
     static proxyAddress = 'http://ip.jsontest.com/';
 
     static get(url, params = {}) {
-        return Rest._send(url, params, { method: 'get' });
+        return REST._send(url, params, {method: 'get'});
     }
 
     static post(url, params = {}) {
-        return Rest._send(url, params, { method: 'post' });
+        return REST._send(url, params, {method: 'post'});
     }
 
     static put(url, params = {}) {
-        return Rest._send(url, params, { method: 'put' });
+        return REST._send(url, params, {method: 'put'});
     }
 
     static options(url, params = {}) {
-        return Rest._send(url, params, { method: 'options' });
+        return REST._send(url, params, {method: 'options'});
     }
 
     static patch(url, params = {}) {
-        return Rest._send(url, params, { method: 'patch' });
+        return REST._send(url, params, {method: 'patch'});
     }
 
     static async _send(url, params, options) {
-        const queryParams = this._encodeQueryData({ ...params, format: 'json' });
+        const queryParams = this._encodeQueryData({...params, format: 'json'});
 
         try {
             const response = await fetch(`${this.proxyAddress}/${url}?${queryParams}`, options);
