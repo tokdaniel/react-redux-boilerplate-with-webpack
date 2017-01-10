@@ -1,7 +1,7 @@
-var path = require('path');
-var webpack = require('webpack');
+var path = require("path");
+var webpack = require("webpack");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: {
@@ -15,20 +15,20 @@ module.exports = {
     },
     output: {
         filename: "/js/bundle-[hash].js",
-        path: './dist',
+        path: "./dist",
     },
     performance: {hints: false},
     module: {
         loaders: [
             {
                 test: /.jsx?$/,
-                loaders: 'babel-loader',
-                include: path.join(__dirname, 'src'),
+                loaders: "babel-loader",
+                include: path.join(__dirname, "src"),
                 exclude: /node_modules/,
             },
             {
                 test: /\.json?$/,
-                loader: 'json'
+                loader: "json"
             },
             {
                 test: /\.scss$/,
@@ -39,26 +39,35 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                loader: 'html-loader'
+                loader: "html-loader"
             },
             {
                 test: /\.(png|jpg|woff)$/,
-                loader: 'url-loader'
+                loader: "url-loader"
             },
         ]
     },
+    resolve: {
+        modules: [path.resolve(__dirname), "node_modules"],
+        alias: {
+            components: "src/components",
+            actions: "src/actions",
+            helpers: "src/helpers"
+        },
+        extensions: [".js", ".jsx"]
+    },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: '/js/vendor.bundle-[hash].js'}),
-        new ExtractTextPlugin('/css/src-[hash].css'),
+        new webpack.optimize.CommonsChunkPlugin({name: "vendor", filename: "/js/vendor.bundle-[hash].js"}),
+        new ExtractTextPlugin("/css/src-[hash].css"),
         new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: 'src/index.tpl.html',
-            inject: 'body'
+            filename: "index.html",
+            template: "src/index.tpl.html",
+            inject: "body"
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('development')
+            "process.env.NODE_ENV": JSON.stringify("development")
         })
     ],
 };
