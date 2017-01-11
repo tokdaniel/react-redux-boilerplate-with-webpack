@@ -1,10 +1,10 @@
-import React, {Component, PropTypes} from 'react';
-import {connect} from 'react-redux';
-import {REST} from 'helpers';
-import {restTest} from 'actions';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { REST } from 'helpers';
+import { restTest } from 'actions';
 import './Content.scss';
 
-@connect(state => ({sidebarVisible: state.sidebar}))
+@connect(state => ({ sidebarVisible: state.sidebar }))
 export default class Content extends Component {
 
     static propTypes = {
