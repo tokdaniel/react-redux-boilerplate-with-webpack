@@ -42,17 +42,26 @@ module.exports = {
                 loader: "html-loader"
             },
             {
-                test: /\.(png|jpg|woff)$/,
+                test: /\.(png|jpg)$/,
                 loader: "url-loader"
             },
+            {
+                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: "url-loader"
+            },
+            {
+                test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: "file-loader"
+            }
         ]
     },
     resolve: {
         modules: [path.resolve(__dirname), "node_modules"],
         alias: {
-            components: "src/components",
             actions: "src/actions",
-            helpers: "src/helpers"
+            components: "src/components",
+            config: "src/config",
+            helpers: "src/helpers",
         },
         extensions: [".js", ".jsx"]
     },
