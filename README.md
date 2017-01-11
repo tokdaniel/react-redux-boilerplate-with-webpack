@@ -8,6 +8,7 @@ Now this repo is much more than just a simple playaround with react, redux and w
 * supporting class and function decorators
 * supporting async-await
 * ES6 - 7 Support with Babel
+* font-awesome included in the package
 * routing with react-router wired into store
 * supporting sass, import your sass file in your component
 * importing images and fonts as data-urls so you don't need to worry about them
@@ -64,6 +65,7 @@ Note that `connect` from `react-redux` is used here as a decorator. The function
 0. components
 1. helpers
 2. actions
+3. config
 
 You can import your stuff anywhere with ```import {Item1, Item2, Item3} from "alias-name"```. For this to work you need to register your item in the appropriate folder's `index.js` file.
 
