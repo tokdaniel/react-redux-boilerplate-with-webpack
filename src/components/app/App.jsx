@@ -1,8 +1,8 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 import './App.scss';
 
 //import used components
-import {Header, SlideOut, Content} from 'components';
+import { Header, SlideOut, Content } from 'components';
 
 export default class App extends Component {
 
@@ -15,7 +15,7 @@ export default class App extends Component {
             <div className="container">
                 <Header />
                 <SlideOut />
-                <Content children={this.props.children} />
+                <Content children={this.props.children}/>
             </div>
         );
     }
