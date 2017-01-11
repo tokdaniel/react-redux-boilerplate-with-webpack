@@ -65,7 +65,7 @@ Note that `connect` from `react-redux` is used here as a decorator. The function
 1. helpers
 2. actions
 
-You can import your stuff here with ```import {Item1, Item2, Item3} from "alias-name"```. For this to work you need to register your item in the appropriate folders `index.js` file.
+You can import your stuff anywhere with ```import {Item1, Item2, Item3} from "alias-name"```. For this to work you need to register your item in the appropriate folder's `index.js` file.
 
 ## Run the app
 
